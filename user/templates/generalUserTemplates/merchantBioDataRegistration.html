@@ -1,0 +1,17 @@
+{% extends 'merchantUserTemplates/merchantBaseTemplate.html' %}
+
+{%block content%}
+<h3 class='d-flex justify-content-center'>Merchant bio data registration</h3>
+<div  class='d-flex justify-content-center'>
+
+
+<form action="" method=POST enctype="multipart/form-data" >
+    
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-secondary">
+    
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,20 @@
+{%extends 'homeTemplate/loggedOutBase.html'%}
+
+{%block content%}
+<div>
+    
+    <form class ="col-md-4 offset-md-4 " action="" method=POST>
+        {%csrf_token%}
+        <div class="form-group ">
+          <label for="exampleInputEmail1">Search for item</label>
+          <input type="text" class="form-control" name="ItemSearch" aria-describedby="text" placeholder="Search for item">
+          <small id="text" class="form-text text-muted">Search for item</small>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+     <h1>The dream</h1>
+</div>
+
+{%endblock%}

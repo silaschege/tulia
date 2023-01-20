@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     # my added apps
     'user',
     'home',
-    'merchant',
     'product',
     'cart',
 ]
@@ -138,3 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # added packages
 
 AUTH_USER_MODEL = 'user.UserAccount'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')

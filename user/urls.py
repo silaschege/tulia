@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import userLogin,merchantBioDataRegistration,merchantRegistration,userRegistration,userLogout
+from .views import userLogin,merchantBioDataRegistration,primaryMerchantRegistration,userRegistration,userLogout
 
 
 urlpatterns = [
@@ -7,7 +7,7 @@ urlpatterns = [
     path ('Logout/',userLogout, name="Logout"),
     path ('MerchantBioDataRegistration/',merchantBioDataRegistration, name="MerchantBioDataRegistration"),
     path ('UserRegistration/',userRegistration, name="UserRegistration"),
-    path ('MerchantRegistration/',merchantRegistration, name="MerchantRegistration"),
+    path ('MerchantRegistration/',primaryMerchantRegistration, name="MerchantRegistration"),
 
   
 ]

@@ -1,0 +1,14 @@
+{%extends 'adminUserTemplate/adminBaseTemplate.html'%}
+
+{%block content%}
+    <div>
+        <h3 class ="col-md-4 offset-md-4">Add Product Category</h3> 
+        <form class ="col-md-4 offset-md-4" action="{%url 'AddProductCategory' %}" method=POST>
+            {%csrf_token%}
+            {{form.as_p}}
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+{%endblock%}

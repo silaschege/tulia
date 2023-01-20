@@ -20,7 +20,7 @@ def userLogin(request):
             # check what the user flag is
             user = request.user 
             if user.is_staff==True:
-                return redirect('MerchantStore')
+                return redirect('AddProductCategory')
 
             if user.is_primary_merchant==True:
                 return redirect('MerchantStore')
@@ -41,6 +41,7 @@ def userLogin(request):
     else:
         return render(request,'generalUserTemplates/login.html',{})
 
+# register users directly
 def userRegistration(request):
     if request.method == 'POST':
         form = UserRegistationForm(request.POST)
@@ -57,7 +58,8 @@ def userRegistration(request):
         form = UserRegistationForm()
     return render(request,'generalUserTemplates/userRegistration.html',{'form':form})
 
-def merchantRegistration(request):
+# register primary merchant
+def primaryMerchantRegistration(request):
     if request.method == 'POST':
         form = UserRegistationForm(request.POST)
         if form.is_valid():
@@ -74,8 +76,16 @@ def merchantRegistration(request):
         form = UserRegistationForm()
     return render(request,'generalUserTemplates/merchantRegistration.html',{'form':form})
 
-# this is a fuction when a merchant bio sata is registered 
-# the merchant employee form is automatically updated
+# def secondaryMerchantRegistration(request):
+#     if request.method == 'POST':
+#         form = UserRegistationForm(request.POST)
+#         if form.is_valid():
+#             user=form.save(commit=False)
+#             user.is_primary_merchant  =True
+
+
+# this is a function when a merchant bio data is registered 
+# the merchant employee is  created if the merchant bio data is considered valid
 def merchantBioDataRegistration (request):
     form = MerchantBioDataRegistrationForm(request.POST)
     if request.method == 'POST':

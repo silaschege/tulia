@@ -8,15 +8,23 @@
     
     
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'AddProduct' %}">Add Product</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'AddProductCategory' %}">Add Product Category</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'MerchantStore' %}">Store</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'AllProductCategory' %}">All Product Category</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'AddProductSubCategory' %}">Add Product Sub Category</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'AllProductSubCategory' %}"> AllProductSubCategory</a>
+          </li>
+        
         
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'Logout' %}">Logout</a>

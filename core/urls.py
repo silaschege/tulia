@@ -4,10 +4,11 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+   
     path('',include('home.urls'),name='home_urls'),
     # authentication system
     path('',include('django.contrib.auth.urls')),
-    path('',include('product.urls'),name='home_urls'),
-    path('',include('user.urls'),name='user_urls'),
+    path('',include('product.urls'),name='product_urls'),
+    path('user',include('user.urls'),name='user_urls'),
 
 ]

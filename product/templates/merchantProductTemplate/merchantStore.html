@@ -1,5 +1,46 @@
 {% extends 'merchantUserTemplates/merchantBaseTemplate.html' %}
 
 {%block content%}
-<h1>MerchantStore'</h1>
+
+
+<div>
+    <h3 class ="col-md-4 offset-md-4">Merchant Store</h3>
+    <div class ="mx-4">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col"> Sub Category</th>
+        <th scope="col"> Product Name </th>
+        <th scope="col"> Product Description</th>
+        <th scope="col"> Product Price</th>
+        <th scope="col"> Product Quantity</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for p  in products %}
+        {% for pro  in p%}
+      <tr>
+        <th scope="row">{{pro.id}}</th>
+        <td>{{pro.product_category}}</td>
+        <td>{{pro.product_sub_category}}</td>
+        <td>{{pro.product_name}}</td>
+        <td>{{pro.product_description}}</td>
+        <td>{{pro.product_price}}</td>
+        <td>{{pro.product_quantity}}</td>
+     
+      </tr>
+      {%endfor%}
+      {%endfor%}
+
+   
+      
+   
+
+    </tbody>
+  </table>
+</div>
+</div>
 {%endblock%}

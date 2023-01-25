@@ -1,0 +1,43 @@
+{%extends 'userTemplates/userBaseTemplate.html'%}
+
+{%block content%}
+<div>
+        <h3 class ="col-md-4 offset-md-4">Cart</h3>
+
+    <div class="p-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for c  in cart %}
+            <tr>
+                <th scope="row">{{c.id}}</th>
+              
+
+                <td>{{c.product }}</td>
+                <td>{{c.quantity }}</td>
+                <td><a type="button" class="btn btn-outline-success" href="{% url 'AddCart' c.id %}">+</a></td>
+                <td><a href="{% url 'UserCartRemove' c.id %} " type="button" class="btn btn-outline-danger">-</a></td>
+              
+                
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+        <p class='d-flex justify-content-end'>Total: {{total}}</p>
+        <p class='d-flex justify-content-end'><a href="{% url 'AddUserShippingLocation' %}" type="button" class="btn btn-outline-success ">Checkout</a>
+    </div>
+
+</div>
+
+  
+
+
+{%endblock%}

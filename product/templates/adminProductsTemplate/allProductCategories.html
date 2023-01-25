@@ -10,19 +10,15 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Category</th>
-               
               </tr>
             </thead>
             <tbody>
-
                 {% for c  in category %}
               <tr>
                 <th scope="row">{{c.id}}</th>
                 <td>{{c.product_category_name}}</td>
-             
               </tr>
               {%endfor%}
-
             </tbody>
           </table>
           

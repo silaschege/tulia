@@ -12,7 +12,7 @@ from .views import (
 
 urlpatterns = [
     
-    path (' ',allProducts, name="AllProducts"),
+    path ('AllProducts/',allProducts, name="AllProducts"),
     path ('AddProductCategory/',addProductCategory, name="AddProductCategory"),
     path ('AllProductCategory/',allProductCategory, name="AllProductCategory"),
     path ('AddProductSubCategory/',addProductSubCategory, name="AddProductSubCategory"),

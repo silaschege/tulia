@@ -27,6 +27,8 @@ class Product(models.Model):
     product_quantity = models.IntegerField() 
     product_image = models.ImageField(upload_to='product_images/',default='media/')
 
+    def __str__(self):
+        return  self.product_name
 
 # class ReceiveOrderGroup(models.Model):
 

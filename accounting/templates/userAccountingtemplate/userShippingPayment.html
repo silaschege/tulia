@@ -1,0 +1,55 @@
+{%extends 'userTemplates/userBaseTemplate.html'%}
+
+{%block content%}
+<div>
+        <h3 class ="col-md-4 offset-md-4">Payment Checkout</h3>
+
+        <div class="p-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+        
+                </tr>
+                </thead>
+                <tbody>
+                    {% for c  in cart %}
+                <tr>
+                    <th scope="row">{{c.id}}</th>
+                  
+    
+                    <td>{{c.product }}</td>
+                    <td>{{c.quantity }}</td>
+
+                  
+                    
+                </tr>
+                {%endfor%}
+                </tbody>
+            </table>
+            <p class='d-flex justify-content-end'>Total: {{total}}</p>
+
+        </div>
+
+
+        <h3 class ="col-md-4 offset-md-4">Mode of Payment</h3>
+
+        <form class ="col-md-4 offset-md-4"  enctype="multipart/form-data" action="{%url 'AddUserShippingLocation' %}" method=POST>
+            <div class="form-group ">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-outline-success">Checkout</button>
+        </div>
+          </form>
+
+
+
+
+</div>
+
+  
+
+
+{%endblock%}

@@ -17,26 +17,31 @@
  
 
 
-   <div class="container ml-2 ">
-    <div class="row">
-        {% for pro in product %}
-            {% if forloop.counter0|divisibleby:5 and not forloop.first %}<div class="w-300 "></div>{% endif %}
+        <div class="container  ">
+          <div class="row">
+              {% for pro in product %}
+                  {% if forloop.counter3|divisibleby:2 and not forloop.first %}<div class="w-300 "></div>{% endif %}
 
-            <div class="card" style="width: 15rem;" >
-              <img class="card-img-top" src="{{ pro.product_image.url}}" alt="Products">
-              <div class="card-body">
-                <h5 class="card-title">Name:{{ pro.product_name }}</h5>
-                <p class="card-text"> Price:Ksh{{pro.product_price}} </p>
-                <p class="card-text"> Category:{{pro.product_category}} </p>
-                <p class="card-text"> Sub Category:{{pro.product_sub_category}} </p>
-              
-                <p><a href="{}" class="btn btn-primary" role="button" aria-pressed="true">Add to cart </a></p>
+                <div class =" col  my-2 d-flex p-2 bd-highlight">
 
-              </div>
-            </div>
-        {% endfor %}
-    </div>
- </div>
+                      <div class="card" style="width: 15rem;" >
+                        <img class="card-img-top" src="{{ pro.product_image.url}}" alt="Products">
+                        <div class="card-body">
+                          <h5 class="card-title">Name:{{ pro.product_name }}</h5>
+                          <p class="card-text"> Price:Ksh{{pro.product_price}} </p>
+                          <p class="card-text"> Category:{{pro.product_category}} </p>
+                          <p class="card-text"> Sub Category:{{pro.product_sub_category}} </p>
+                        
+                          <p><a href="{% url 'AddCart' pro.id %}" class="btn btn-primary" role="button" aria-pressed="true">Add to cart </a></p>
+
+                        </div>
+                      </div>
+                </div>
+              {% endfor %}
+          </div>
+
+
+
      
 </div>
 

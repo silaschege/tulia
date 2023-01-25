@@ -1,0 +1,22 @@
+{%extends 'userTemplates/userBaseTemplate.html'%}
+
+{%block content%}
+<div>
+        <h3 class ="col-md-4 offset-md-4">Shipping Checkout</h3>
+
+        <form class ="col-md-4 offset-md-4"  enctype="multipart/form-data" action="{%url 'AddUserShippingLocation' %}" method=POST>
+            <div class="form-group ">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">Next</button>
+        </div>
+          </form>
+
+
+
+</div>
+
+  
+
+
+{%endblock%}

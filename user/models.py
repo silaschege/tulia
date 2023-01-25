@@ -101,6 +101,9 @@ class MerchantBioData(models.Model):
     major_landmark = models.CharField(max_length=255)
     industry = models.CharField(max_length=255)
     primary_merchant = models.ForeignKey(UserAccount,on_delete=models.SET_DEFAULT,default=1)
+    
+    def __str__(self):
+        return self.email
 
 
 class MerchantEmployees(models.Model):

@@ -33,20 +33,6 @@
 
         </div>
 
-
-        <h3 class ="col-md-4 offset-md-4">Mode of Payment</h3>
-
-        <form class ="col-md-4 offset-md-4"  enctype="multipart/form-data" action="{%url 'UserShippingPayment' %}" method=POST>
-            <div class="form-group ">
-            {%csrf_token%}
-            {{form.as_p}}
-            <button type="submit" class="btn btn-outline-success">Checkout</button>
-        </div>
-          </form>
-
-
-
-
 </div>
 
   
